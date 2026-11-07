@@ -1,0 +1,55 @@
+# Mindustry prefixes this filename: cryosphere-tantros-reborn.
+# This creates a new Planet; it does not patch the vanilla tantros.
+# A unique filename also ensures V8 assigns mod ownership correctly.
+parent: sun
+radius: 1
+accessible: true
+visible: true
+alwaysUnlocked: true
+
+# Keep V8's placeholder sector so this planet appears in the planet selector.
+# It is intentionally gridless for now; real sector maps can replace this later.
+sectorSize: 0
+allowLaunchToNumbered: false
+
+# Env.terrestrial (1) | Env.underwater (4), matching vanilla Tantros.
+defaultEnv: 5
+atmosphereColor: "46c9b8"
+iconColor: "597be3"
+atmosphereRadIn: -0.01
+atmosphereRadOut: 0.3
+
+# HJSON only exposes AsteroidGenerator in V8, not TantrosPlanetGenerator.
+# Keep the water as the base mesh and put a fully opaque, near-identical ice
+# shell on cloudMesh so the planet stays smooth and teal like the reference.
+mesh: {
+    type: NoiseMesh
+    seed: 17
+    divisions: 5
+    radius: 1
+    octaves: 3
+    persistence: 0.55
+    scale: 1.8
+    mag: 0.035
+    color1: "255b67"
+    color2: "2a6570"
+    colorOct: 3
+    colorPersistence: 0.55
+    colorScale: 1.8
+    colorThreshold: 0.5
+}
+
+# Keep every HexSkyMesh patch: this is a solid upper shell, not white cloud
+# streaks. The color is only slightly brighter than the water base.
+cloudMesh: {
+    type: HexSkyMesh
+    seed: 41
+    speed: 0
+    radius: 0.018
+    divisions: 6
+    color: "2d6b75"
+    octaves: 3
+    persistence: 0.6
+    scl: 1.6
+    thresh: 2
+}

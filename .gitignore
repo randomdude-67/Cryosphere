@@ -1,0 +1,10 @@
+# Generated mod archives and local Python caches.
+/dist/
+__pycache__/
+*.py[cod]
+
+# Local editor and operating-system files.
+/.idea/
+/.vscode/
+.DS_Store
+Thumbs.db

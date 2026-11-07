@@ -1,0 +1,6 @@
+name: cryosphere
+displayName: Cryosphere
+author: Cryosphere contributors
+description: A standalone, mod-owned revival of Tantros. The hidden vanilla Tantros is left untouched.
+version: "0.1.0"
+minGameVersion: "150"

@@ -1,0 +1,8 @@
+{
+    type: StaticWall
+    name: "Weathered Rock"
+    description: "How did you get access to this?"
+    solid: true
+    variants: 2
+    buildVisibility: editorOnly
+}
